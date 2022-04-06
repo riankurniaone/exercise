@@ -1,17 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Gif from "../../components/Gif";
-import SearchBar from "../../components/SearchBar";
+import { getTrendingImages } from "../../utils/fetchApi";
 
-export default function SearchGif() {
+export default function Trending() {
     const [images, setImages] = useState([]);
 
-    const onSuccess = (images) => {
-        setImages(images);
-    };
+    useEffect(() => {
+        getTrendingImages(12).then((result) => setImages(result.data));
+    }, []);
 
     return (
         <div className="container">
-            <SearchBar onSuccess={onSuccess} />
             <div className="gif-wrapper">
                 {images.map((image) => (
                     <Gif

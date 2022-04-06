@@ -1,12 +1,23 @@
-// import Home component from Pages
-// import Home from "./pages/Search";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import SearchGiffrom from "./pages/SearchGif";
+import Navbar from "./components/Navbar";
+import SearchGif from "./pages/SearchGif";
+import Trending from "./pages/Trending";
 
 function App() {
-  // render Home component into the App component
-  // return <Home />;
-  return <SearchGiffrom />
+    return (
+        <Router>
+            <Navbar />
+            <Switch>
+                <Route path="/trending">
+                    <Trending />
+                </Route>
+                <Route path="/search">
+                    <SearchGif />
+                </Route>
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;
