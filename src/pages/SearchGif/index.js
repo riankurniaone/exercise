@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Gif from "../../components/Gif";
 import SearchBar from "../../components/SearchBar";
+import React from "react";
 
 export default function SearchGif() {
     const [images, setImages] = useState([]);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Gif from "../../components/Gif";
 import { getTrendingImages } from "../../utils/fetchApi";
 
